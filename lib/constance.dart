@@ -25,7 +25,7 @@ MaterialColor primaryColorTheme = const MaterialColor(
     900: Color(0xFFd14c4c),
   },
 );
-const btnBgColor = Color(0xFF800000);
+const btnBgColor = Color(0xFF121212);
 const btnTxtColor = Color.fromRGBO(255, 255, 255, 1.0);
 
 const CACHED_USER_DATA = "CACHED_USER_DATA";
@@ -33,9 +33,3 @@ const CACHED_USER_DATA = "CACHED_USER_DATA";
 const kTileHeight = 50.0;
 const inProgressColor = Colors.black87;
 const todoColor = Color(0xffd1d2d7);
-
-enum Pages {
-  DeliveryTime,
-  AddAddress,
-  Summary,
-}

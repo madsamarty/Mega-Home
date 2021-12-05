@@ -24,7 +24,9 @@ class CustomTextButton extends StatelessWidget {
         onPress();
       },
       style: TextButton.styleFrom(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(2),
+          ),
           padding: const EdgeInsets.all(18),
           backgroundColor: backgroundColor,
           textStyle: const TextStyle(fontWeight: FontWeight.bold)),
