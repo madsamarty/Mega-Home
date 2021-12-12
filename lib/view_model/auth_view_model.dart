@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
 
-class AuthViewModel extends GetxController {
+class AuthViewModel {
   late TextEditingController emailController,
       passwordController,
       nameController;
 
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
+  AuthViewModel() {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     nameController = TextEditingController();
   }
+  /* @override
+  void onInit() {
+    // TODO: implement onInit
+    //super.onInit();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    nameController = TextEditingController();
+  } */
+  /* void initState() {
+    //super.initState();
+    
+  } */
 }
