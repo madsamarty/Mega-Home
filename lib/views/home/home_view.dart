@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mega_home/utils/constance.dart';
-import 'package:mega_home/views/custom_widgets/custom_status_card.dart';
+import 'package:mega_home/utils/constants/colors.dart';
+import 'package:mega_home/views/custom_widgets/custom_sensor_card.dart';
 import 'package:mega_home/views/custom_widgets/custom_text.dart';
-import 'package:mega_home/views/nav_drawer.dart';
+import 'package:mega_home/views/home/drawer/nav_drawer.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -19,33 +19,28 @@ class HomeView extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(15),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                //padding: const EdgeInsets.only(bottom: 30),
-                child: Image.asset("assets/logos/mega_word.png"),
-              ),
+            Container(
+              //padding: const EdgeInsets.only(bottom: 30),
+              child: Image.asset("assets/logos/mega_word.png"),
             ),
-            Expanded(
-              flex: 3,
-              //padding: const EdgeInsets.all(15),
+            Container(
+              height: 380,
               child: GridView.count(
                   crossAxisCount: 2,
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 15,
                   children: List.generate(4, (index) {
-                    return CustomStatusCard();
+                    return const CustomSensorCard();
                   })),
             ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                //padding: const EdgeInsets.symmetric(vertical: 80),
-                child: const CustomText(
-                  title: "Everything Is Okay",
-                  alignment: Alignment.center,
-                ),
+            Container(
+              padding: const EdgeInsets.only(bottom: 50),
+              child: const CustomText(
+                title: "Everything Is Okay",
+                alignment: Alignment.center,
+                color: Colors.black,
               ),
             )
           ],

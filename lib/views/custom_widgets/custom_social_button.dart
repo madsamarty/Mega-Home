@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mega_home/utils/constants/colors.dart';
 
-import '../../utils/constance.dart';
+import '../../utils/constants/strings.dart';
 
 class CustomSocialButton extends StatelessWidget {
   final String path;

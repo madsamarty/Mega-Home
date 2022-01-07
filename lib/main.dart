@@ -1,39 +1,46 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:mega_home/view_model/auth_view_model.dart';
-import 'package:mega_home/views/auth/login_view.dart';
+import 'package:mega_home/core/router.dart';
+import 'package:mega_home/core/view_model/auth/auth_provider.dart';
+import 'package:mega_home/helper/shared_prefrences.dart';
+import 'package:mega_home/utils/constants/routes.dart';
+import 'package:mega_home/utils/global/global.dart';
+import 'package:mega_home/wrapper.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<AuthViewModel>(
-          create: (_) => AuthViewModel(),
-        ),
+        ChangeNotifierProvider<AuthViewModel>(
+            create: (_) => AuthViewModel(FirebaseAuth.instance)),
+        StreamProvider(
+          create: (context) => context.read<AuthViewModel>().authStateChanges,
+          initialData: null,
+        )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: const LoginView(),
+        onGenerateRoute: AppRouter.generateRoute,
+        navigatorKey: AppRouter.navigatorKey,
+        initialRoute: wrapperRoute,
+        //home: const Wrapper(),
       ),
     );
   }

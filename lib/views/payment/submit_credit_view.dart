@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mega_home/utils/constance.dart';
-import 'package:mega_home/view_model/auth_view_model.dart';
+import 'package:mega_home/core/view_model/auth/auth_provider.dart';
+import 'package:mega_home/utils/constants/colors.dart';
+import 'package:mega_home/utils/constants/routes.dart';
+import 'package:mega_home/utils/constants/strings.dart';
 import 'package:mega_home/views/custom_widgets/custom_social_button.dart';
 import 'package:mega_home/views/custom_widgets/custom_text_button.dart';
 import 'package:mega_home/views/custom_widgets/custom_text_from_field.dart';
 import 'package:mega_home/views/custom_widgets/horizontal_or_line.dart';
 import 'package:provider/provider.dart';
 
-class RegisterView2 extends StatelessWidget {
-  const RegisterView2({Key? key}) : super(key: key);
+class SubmitCredit extends StatelessWidget {
+  const SubmitCredit({Key? key}) : super(key: key);
   final EdgeInsets _customPadding =
       const EdgeInsets.symmetric(vertical: 10, horizontal: 20);
 
@@ -44,7 +46,7 @@ class RegisterView2 extends StatelessWidget {
                   Container(
                       padding: _customPadding,
                       child: CustomTextFromField(
-                        controller: authViewModel.emailController,
+                        controller: authViewModel.cardNumberController,
                         hint: 'Card number',
                         onSave: (save) {},
                         validator: (validator) {},
@@ -52,7 +54,7 @@ class RegisterView2 extends StatelessWidget {
                   Container(
                       padding: _customPadding,
                       child: CustomTextFromField(
-                        controller: authViewModel.emailController,
+                        controller: authViewModel.cardNameController,
                         hint: 'Name',
                         onSave: (save) {},
                         validator: (validator) {},
@@ -60,7 +62,7 @@ class RegisterView2 extends StatelessWidget {
                   Container(
                       padding: _customPadding,
                       child: CustomTextFromField(
-                        controller: authViewModel.passwordController,
+                        controller: authViewModel.expDateController,
                         hint: 'Expired date',
                         onSave: (save) {},
                         validator: (validator) {},
@@ -68,7 +70,7 @@ class RegisterView2 extends StatelessWidget {
                   Container(
                       padding: _customPadding,
                       child: CustomTextFromField(
-                        controller: authViewModel.passwordController,
+                        controller: authViewModel.secCodeController,
                         hint: 'Security code',
                         onSave: (save) {},
                         validator: (validator) {},
@@ -82,7 +84,10 @@ class RegisterView2 extends StatelessWidget {
             Container(
               padding: _customPadding,
               child: CustomTextButton(
-                onPress: () {},
+                onPress: () {
+                  authViewModel.submitCredit();
+                  //Navigator.pushNamed(context, wrapperRoute);
+                },
                 title: "Register",
               ),
             ),

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "348368501539",
+    "project_id": "mega-home-d06c3",
+    "storage_bucket": "mega-home-d06c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348368501539:android:2de6d2daab1372f7d32a96",
+        "android_client_info": {
+          "package_name": "com.example.mega_home"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348368501539-b823lo87koni6or1pe7t36saigt9umva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mega_home",
+            "certificate_hash": "fb6ad4a4e953b1a3da61448765215ce74726324a"
+          }
+        },
+        {
+          "client_id": "348368501539-bk46qu1hok8jvibgj9os5pold4pl1f55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTDa639EoIwrPFtIvDG-e3E32pcOR9aZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348368501539-bk46qu1hok8jvibgj9os5pold4pl1f55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 
-const String tableCartProduct = "cartProduct";
-const String columnId = "productId";
-const String columnName = "name";
-const String columnImage = "image";
-const String columnPrice = "price";
-const String columnQuantity = "quantity";
-
 //const primaryColor = Color.fromRGBO(0, 197, 105, 1.0);
 const Color primaryColor = Color(0xFF800000);
 const Color secColor = Color(0xFFFFFFFF);
@@ -27,11 +20,8 @@ MaterialColor primaryColorTheme = const MaterialColor(
 );
 const btnBgColor = Color(0xFF121212);
 const btnTxtColor = Color.fromRGBO(255, 255, 255, 1.0);
-
-const CACHED_USER_DATA = "CACHED_USER_DATA";
+const List<Color> gradientStatusColors = [Colors.white, Colors.grey];
 
 const kTileHeight = 50.0;
 const inProgressColor = Colors.black87;
 const todoColor = Color(0xffd1d2d7);
-
-const List<Color> gradientStatusColors = [btnBgColor, Color(0xff606060)];
