@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mega_home/core/view_model/auth/auth_provider.dart';
+import 'package:mega_home/core/view_model/authentication_provider.dart';
 import 'package:mega_home/utils/constants/colors.dart';
 import 'package:mega_home/utils/constants/routes.dart';
-import 'package:mega_home/utils/constants/strings.dart';
-import 'package:mega_home/views/auth/register_view.dart';
 import 'package:mega_home/views/custom_widgets/custom_social_button.dart';
 import 'package:mega_home/views/custom_widgets/custom_text_button.dart';
 import 'package:mega_home/views/custom_widgets/custom_text_from_field.dart';
 import 'package:mega_home/views/custom_widgets/horizontal_or_line.dart';
-import 'package:mega_home/views/home/home_view.dart';
 import 'package:mega_home/wrapper.dart';
 import 'package:provider/provider.dart';
 
@@ -128,7 +124,10 @@ class LoginView extends StatelessWidget {
                             path: "assets/icons/google.svg",
                           ),
                           CustomSocialButton(
-                            onTap: () {},
+                            onTap: () {
+                              Provider.of<AuthViewModel>(context, listen: false)
+                                  .singInAnonymously();
+                            },
                             path: "assets/icons/apple.svg",
                           ),
                         ],

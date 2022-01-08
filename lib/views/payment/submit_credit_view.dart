@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mega_home/core/view_model/auth/auth_provider.dart';
+import 'package:mega_home/core/view_model/authentication_provider.dart';
 import 'package:mega_home/utils/constants/colors.dart';
 import 'package:mega_home/utils/constants/routes.dart';
 import 'package:mega_home/utils/constants/strings.dart';

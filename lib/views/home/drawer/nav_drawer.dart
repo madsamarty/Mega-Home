@@ -1,44 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:mega_home/core/view_model/authentication_provider.dart';
+import 'package:mega_home/utils/constants/strings.dart';
+import 'package:mega_home/views/home/profile/profile_view.dart';
+import 'package:provider/provider.dart';
 
 class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          const DrawerHeader(
-            child: Text(
-              'Side menu',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+    return SafeArea(
+      child: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text(profile),
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfileView()))
+              },
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
-            onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-        ],
+            ListTile(
+              leading: const Icon(Icons.notifications),
+              title: const Text(settings),
+              onTap: () => {Navigator.of(context).pop()},
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text(messages),
+              onTap: () => {Navigator.of(context).pop()},
+            ),
+            ListTile(
+              leading: const Icon(Icons.support),
+              title: Text(support),
+              onTap: () => {Navigator.of(context).pop()},
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: const Text(logout),
+              onTap: () => {
+                Provider.of<AuthViewModel>(context, listen: false).signOut(),
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

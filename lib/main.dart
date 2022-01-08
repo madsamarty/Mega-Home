@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mega_home/core/router.dart';
-import 'package:mega_home/core/view_model/auth/auth_provider.dart';
+import 'package:mega_home/core/view_model/authentication_provider.dart';
 import 'package:mega_home/helper/shared_prefrences.dart';
 import 'package:mega_home/utils/constants/routes.dart';
 import 'package:mega_home/utils/global/global.dart';
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
         onGenerateRoute: AppRouter.generateRoute,
         navigatorKey: AppRouter.navigatorKey,
-        initialRoute: wrapperRoute,
+        initialRoute: homeRoute,
         //home: const Wrapper(),
       ),
     );

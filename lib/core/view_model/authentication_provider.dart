@@ -5,8 +5,6 @@ import 'package:mega_home/helper/shared_prefrences.dart';
 import 'package:mega_home/model/user_model.dart';
 
 class AuthViewModel with ChangeNotifier {
-  //final FirebaseAuthService _firebaseAuthService = FirebaseAuthService();
-
   TextEditingController emailController = TextEditingController(),
       nameController = TextEditingController(),
       passwordController1 = TextEditingController(),
@@ -38,6 +36,10 @@ class AuthViewModel with ChangeNotifier {
       getCurrentUserData(userCred.user!.uid);
       print(userCred.user!.email);
     });
+  }
+
+  void singInAnonymously() async {
+    await firebaseAuth.signInAnonymously();
   }
 
   Future<String?> signUp() async {
