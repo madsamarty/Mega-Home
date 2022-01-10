@@ -77,7 +77,7 @@ class LoginView extends StatelessWidget {
                       onPress: () {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState!.save();
-                          _authProvider.signIn();
+                          _authProvider.signInWithEmailAndPassword();
                           Navigator.push(
                               context,
                               MaterialPageRoute(

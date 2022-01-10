@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mega_home/views/auth/login_view.dart';
-import 'package:mega_home/views/home/home_view.dart';
+import 'package:mega_home/views/home/main/home_view.dart';
 import 'package:provider/provider.dart';
 
 class Wrapper extends StatelessWidget {

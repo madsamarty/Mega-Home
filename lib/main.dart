@@ -3,6 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mega_home/core/router.dart';
 import 'package:mega_home/core/view_model/authentication_provider.dart';
+import 'package:mega_home/core/view_model/home_provider.dart';
+import 'package:mega_home/core/view_model/profile_provider.dart';
 import 'package:mega_home/helper/shared_prefrences.dart';
 import 'package:mega_home/utils/constants/routes.dart';
 import 'package:mega_home/utils/global/global.dart';
@@ -29,7 +31,9 @@ class MyApp extends StatelessWidget {
         StreamProvider(
           create: (context) => context.read<AuthViewModel>().authStateChanges,
           initialData: null,
-        )
+        ),
+        ChangeNotifierProvider<ProfileProvider>(
+            create: (_) => ProfileProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

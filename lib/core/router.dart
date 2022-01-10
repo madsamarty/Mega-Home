@@ -3,7 +3,7 @@ import 'package:mega_home/utils/constants/routes.dart';
 import 'package:mega_home/views/auth/login_view.dart';
 import 'package:mega_home/views/auth/register_view.dart';
 import 'package:mega_home/views/payment/submit_credit_view.dart';
-import 'package:mega_home/views/home/home_view.dart';
+import 'package:mega_home/views/home/main/home_view.dart';
 import 'package:mega_home/wrapper.dart';
 
 class AppRouter {

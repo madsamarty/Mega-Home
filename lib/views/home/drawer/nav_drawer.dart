@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mega_home/core/view_model/authentication_provider.dart';
 import 'package:mega_home/utils/constants/strings.dart';
 import 'package:mega_home/views/home/profile/profile_view.dart';
+import 'package:mega_home/views/home/drawer/sign_out_alert_dialog.dart';
 import 'package:provider/provider.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -35,13 +36,7 @@ class NavDrawer extends StatelessWidget {
               title: Text(support),
               onTap: () => {Navigator.of(context).pop()},
             ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: const Text(logout),
-              onTap: () => {
-                Provider.of<AuthViewModel>(context, listen: false).signOut(),
-              },
-            ),
+            const SignOutListTile()
           ],
         ),
       ),

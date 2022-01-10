@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+
 import 'package:mega_home/utils/constants/colors.dart';
 import 'package:mega_home/utils/constants/strings.dart';
 import 'package:mega_home/views/custom_widgets/custom_text.dart';
 
 class CustomSensorCard extends StatelessWidget {
-  const CustomSensorCard({Key? key}) : super(key: key);
+  late String sensorName;
+  late bool sensorStatus;
+  String _sensorStatusPhrase = "Closed";
+  CustomSensorCard({
+    Key? key,
+    required this.sensorName,
+    this.sensorStatus = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,32 +28,32 @@ class CustomSensorCard extends StatelessWidget {
             colors: gradientStatusColors),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              Icon(Icons.door_back_door),
+            children: [
+              const Icon(Icons.door_back_door),
               CustomText(
-                title: "Door",
+                title: sensorName,
               )
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              Icon(
+            children: [
+              const Icon(
                 Icons.circle_rounded,
                 color: Colors.green,
                 size: 15,
               ),
               CustomText(
-                title: "Door",
-              )
+                title: _sensorStatusPhrase,
+              ),
             ],
           ),
           Switch(
-            value: true,
+            value: false,
             onChanged: (value) {},
             activeTrackColor: Colors.lightGreenAccent,
             activeColor: Colors.green,
@@ -53,5 +61,13 @@ class CustomSensorCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  changeSensorStatus() {
+    if (sensorStatus) {
+      _sensorStatusPhrase = "Opened";
+    } else {
+      _sensorStatusPhrase = "Closed";
+    }
   }
 }

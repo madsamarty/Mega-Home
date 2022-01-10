@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_offline/flutter_offline.dart';
+import 'package:mega_home/views/home/main/bottom_status.dart';
 import 'package:provider/src/provider.dart';
 
 import 'package:mega_home/utils/constants/colors.dart';
@@ -21,6 +23,9 @@ class HomeView extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0.0,
             foregroundColor: btnBgColor,
+            actions: [
+              IconButton(onPressed: () {}, icon: const Icon(Icons.refresh))
+            ],
           ),
           body: Container(
             padding: const EdgeInsets.all(15),
@@ -38,7 +43,9 @@ class HomeView extends StatelessWidget {
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
                       children: List.generate(4, (index) {
-                        return const CustomSensorCard();
+                        return CustomSensorCard(
+                          sensorName: "Door",
+                        );
                       })),
                 ),
                 Container(
