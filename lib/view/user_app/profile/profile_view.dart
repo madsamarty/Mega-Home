@@ -48,8 +48,8 @@ class ProfileView2 extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-            const CustomText(
-              title: "Alex Adams",
+             CustomText(
+              title: controller.userModel.name,
               alignment: Alignment.center,
               color: Colors.white,
               fontSize: 26,
