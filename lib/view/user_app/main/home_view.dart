@@ -12,7 +12,7 @@ import 'package:mega_home_graduation_project/core/view_model/Sensors/water_Senso
 import '../../../core/view_model/home_view_model.dart';
 
 import '../../custom_widgets/custom_sensor_card.dart';
-import '../nav_drawer.dart';
+import '../nav_drawer/nav_drawer.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class HomeView extends StatelessWidget {
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
       ),
-      drawer: NavDrawer(),
+      drawer: const UserNavDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(5),
         child: Column(

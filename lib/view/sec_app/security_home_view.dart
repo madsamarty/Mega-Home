@@ -6,6 +6,8 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:mega_home_graduation_project/core/view_model/sec_view_model.dart';
 import 'package:mega_home_graduation_project/utils/constants/strings.dart';
 import 'package:mega_home_graduation_project/view/custom_widgets/custom_sec_card.dart';
+import 'package:mega_home_graduation_project/view/custom_widgets/custom_sec_card_with_camera.dart';
+import 'package:mega_home_graduation_project/view/sec_app/nav_drawer/nav_drawer.dart';
 
 class SecurityHomeView extends StatelessWidget {
   final TextStyle unselectedLabelStyle = TextStyle(
@@ -24,7 +26,7 @@ class SecurityHomeView extends StatelessWidget {
             elevation: 0.0,
             iconTheme: const IconThemeData(color: Colors.black),
           ),
-          drawer: Drawer(),
+          drawer: SecurityNavDrawer(),
               body: Container(
                 child: Center(
                   child: Column(
@@ -37,7 +39,7 @@ class SecurityHomeView extends StatelessWidget {
                       IndexedStack(
                         index: landingPageController.tabIndex,
                         children: [
-                          CustomSecCard(sensorIcon: policeIcon, sensorName: "THEFT ALARM"),
+                          CustomSecCardWithCamera(sensorIcon: policeIcon, sensorName: "THEFT ALARM"),
                           CustomSecCard(sensorIcon: gasIcon, sensorName: "GAS ALARM"),
                           CustomSecCard(sensorIcon: waterIcon , sensorName: "WATER ALARM"),
                           CustomSecCard(sensorIcon: fireExtinguisherIcon, sensorName: "FIRE ALARM"),

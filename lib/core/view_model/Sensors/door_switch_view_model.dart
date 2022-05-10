@@ -17,6 +17,7 @@ class DoorSwitchViewModel extends GetxController{
   String get iconName => _iconName;
 
 
+
   changeDoorPowerStatus() {
     if (_sensorStatus == true) {
       _sensorStatus = false;

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mega_home_graduation_project/core/view_model/auth_view_model.dart';
+import 'package:mega_home_graduation_project/view/custom_widgets/custom_text.dart';
 import 'package:mega_home_graduation_project/view/sec_app/security_home_view.dart';
 import 'package:mega_home_graduation_project/view/user_app/main/home_view.dart';
 
@@ -68,6 +69,32 @@ class LoginPage extends StatelessWidget {
                               validator: (validator) {},
                             ),
                           ),
+                          Container(
+                            padding: _customPadding,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const CustomText(
+                                  title: "Choose your account type",
+                                ),
+                                DropdownButton(
+                                  onChanged: (newValue) {
+                                    controller.setSelected(newValue);
+                                  },
+                                  value: controller.authDropdownValue,
+                                  items: controller.authDropdownList
+                                      .map((selectedType) {
+                                    return DropdownMenuItem(
+                                      child: Text(
+                                        selectedType,
+                                      ),
+                                      value: selectedType,
+                                    );
+                                  }).toList(),
+                                )
+                              ],
+                            ),
+                          )
                         ],
                       )),
                       Container(
@@ -86,20 +113,20 @@ class LoginPage extends StatelessWidget {
                             const SizedBox(
                               height: 20,
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(2),
-                                  border: Border.all(color: btnBgColor)),
-                              child: CustomTextButton(
-                                onPress: () {
-                                  //Get.offAll(HomeView());
-                                  Get.offAll(HomeView());
-                                },
-                                title: "Register",
-                                backgroundColor: Colors.transparent,
-                                textColor: btnBgColor,
-                              ),
-                            ),
+                            // Container(
+                            //   decoration: BoxDecoration(
+                            //       borderRadius: BorderRadius.circular(2),
+                            //       border: Border.all(color: btnBgColor)),
+                            //   child: CustomTextButton(
+                            //     onPress: () {
+                            //       //Get.offAll(HomeView());
+                            //       Get.offAll(HomeView());
+                            //     },
+                            //     title: "Register",
+                            //     backgroundColor: Colors.transparent,
+                            //     textColor: btnBgColor,
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),

@@ -9,8 +9,8 @@ import 'package:mega_home_graduation_project/core/view_model/ProfileViewModel.da
 import 'package:mega_home_graduation_project/view/custom_widgets/custom_data_row.dart';
 import 'package:mega_home_graduation_project/view/custom_widgets/custom_text.dart';
 
-class ProfileView2 extends StatelessWidget {
-  const ProfileView2({Key? key}) : super(key: key);
+class ProfileView extends StatelessWidget {
+  const ProfileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CustomSecCard extends StatelessWidget {
+class CustomSecCardWithCamera extends StatelessWidget {
   String sensorIcon;
   String sensorName;
 
-  CustomSecCard({Key? key, required this.sensorIcon, required this.sensorName}) : super(key: key);
+  CustomSecCardWithCamera({Key? key, required this.sensorIcon, required this.sensorName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,15 +78,34 @@ class CustomSecCard extends StatelessWidget {
                 ],
               ),
             ),
-            MaterialButton(
-              onPressed: (){},
-              color: Colors.black,
-              child: const Text(
-                'CONTACT WITH USER',
-                style: TextStyle(
-                  color: Colors.white,
+
+            Row(
+
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+
+                MaterialButton(
+                  onPressed: (){},
+                  color: Colors.black,
+                  child: const Text(
+                    'CONTACT WITH USER',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(width:30.0
+                  ,),
+
+                FloatingActionButton(onPressed: (){},
+                  backgroundColor: Colors.black,
+                  child: Icon(
+                    Icons.camera_alt_outlined,
+                    size: 30.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

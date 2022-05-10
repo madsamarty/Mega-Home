@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:mega_home_graduation_project/wrapper.dart';
+import 'package:mega_home_graduation_project/view/auth/wrapper.dart';
 
 import '../../helper/check_connection.dart';
 import '../../helper/local_storage_data.dart';
@@ -36,6 +36,18 @@ class AuthViewModel extends GetxController {
 
   String get userID => _userID;
   String _userID = "";
+
+
+  String authDropdownValue = 'User';
+  var authDropdownList = [
+    'User',
+    'Security',
+  ];
+
+  void setSelected(value){
+    authDropdownValue = value;
+    update();
+  }
 
   @override
   void onInit() {

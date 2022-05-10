@@ -17,10 +17,10 @@ class Binding extends Bindings {
   void dependencies() {
     Get.lazyPut(() => AuthViewModel());
     Get.lazyPut(() => HomeViewModel());
-    Get.lazyPut(() => FireSensorViewModel());
-    Get.lazyPut(() => GasSensorViewModel());
-    Get.lazyPut(() => WaterSensorViewModel());
-    Get.lazyPut(() => DoorSwitchViewModel());
+    Get.lazyPut(() => FireSensorViewModel(), fenix: true);
+    Get.lazyPut(() => GasSensorViewModel(), fenix: true);
+    Get.lazyPut(() => WaterSensorViewModel(), fenix: true);
+    Get.lazyPut(() => DoorSwitchViewModel(), fenix: true);
     Get.lazyPut(() => ProfileViewModel());
     Get.lazyPut(() => MessagesViewModel());
     Get.lazyPut(() => LocalStorageData());

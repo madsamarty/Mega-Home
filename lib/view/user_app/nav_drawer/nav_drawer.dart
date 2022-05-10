@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mega_home_graduation_project/core/view_model/auth_view_model.dart';
-import 'package:mega_home_graduation_project/view/user_app/messages_view.dart';
-import 'package:mega_home_graduation_project/view/user_app/profile/profile_view.dart';
-import 'package:mega_home_graduation_project/view/user_app/support_view.dart';
+import 'package:mega_home_graduation_project/view/auth/signout/signout_alert_dialog.dart';
+import 'package:mega_home_graduation_project/view/user_app/nav_drawer/messages/messages_view.dart';
+import 'package:mega_home_graduation_project/view/user_app/nav_drawer/profile/profile_view.dart';
+import 'package:mega_home_graduation_project/view/user_app/nav_drawer/support/support_view.dart';
 
 
-import '../../utils/constants/strings.dart';
+import '../../../utils/constants/strings.dart';
 
-class NavDrawer extends StatelessWidget {
+class UserNavDrawer extends StatelessWidget {
+  const UserNavDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,7 +33,7 @@ class NavDrawer extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProfileView2()));
+                              builder: (context) => ProfileView()));
                     }),
                 ListTile(
                     title: const Text('MESSAGES',
@@ -62,7 +65,7 @@ class NavDrawer extends StatelessWidget {
                             fontSize: 25,
                           )),
                       onTap: () {
-                        controller.signOut();
+                        showDialog<String>(context: context, builder:(BuildContext context)=> SignOutAlertDialog());
                       }),
                 ),
                 const SizedBox(
