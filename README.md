@@ -1,16 +1,14 @@
-# mega_home_graduation_project
+Mega Home Application
 
-A new Flutter project.
+Cross Platform Mobile Application made with Flutter framework
+Getx for state management
+Firebase real time database and fire store for database 
 
-## Getting Started
+the application connected to NodeMCU - ESP8266 board that triggers any danger signs like smoke, gas or water leak then send notification to the mobile application for the homeowner and the security man in emergency situations.
 
-This project is a starting point for a Flutter application.
+Sensors used ( MQ2, MQ5, Water Level Sensor, Door Magnetic Switch )
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![image](https://user-images.githubusercontent.com/40921921/182002483-cbff4618-7ef4-41f8-98a5-358e7e0713a9.png
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![iPhone 12 Pro Max – 7](https://user-images.githubusercontent.com/40921921/182002492-f4fb03a9-05c0-44dc-b173-ebc61cc49b4b.png)
